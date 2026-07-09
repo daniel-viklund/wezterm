@@ -10,6 +10,8 @@
 
 local wezterm = require 'wezterm'
 
+local tab_mod = wezterm.target_triple:find('windows') and 'ALT' or 'SUPER'
+
 -- The config_builder gives you clearer error messages if you mistype a key.
 local config = wezterm.config_builder()
 
@@ -179,6 +181,16 @@ config.keys = {
   { key = 'x', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateCopyMode },
   { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo 'Clipboard' },
   { key = 'v', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
+
+  { key = '1', mods = tab_mod, action = wezterm.action.ActivateTab(0) },
+  { key = '2', mods = tab_mod, action = wezterm.action.ActivateTab(1) },
+  { key = '3', mods = tab_mod, action = wezterm.action.ActivateTab(2) },
+  { key = '4', mods = tab_mod, action = wezterm.action.ActivateTab(3) },
+  { key = '5', mods = tab_mod, action = wezterm.action.ActivateTab(4) },
+  { key = '6', mods = tab_mod, action = wezterm.action.ActivateTab(5) },
+  { key = '7', mods = tab_mod, action = wezterm.action.ActivateTab(6) },
+  { key = '8', mods = tab_mod, action = wezterm.action.ActivateTab(7) },
+  { key = '9', mods = tab_mod, action = wezterm.action.ActivateTab(-1) }, -- last tab
 }
 
 -- To wipe ALL default keybindings and start clean, uncomment:
