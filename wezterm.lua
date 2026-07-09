@@ -168,10 +168,6 @@ config.keys = {
   { key = 'UpArrow',    mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Up'    },
   { key = 'DownArrow',  mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection 'Down'  },
 
-  -- Tabs
-  { key = 't', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
-  { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentTab { confirm = true } },
-
   -- Font size
   { key = '=', mods = 'CTRL', action = wezterm.action.IncreaseFontSize },
   { key = '-', mods = 'CTRL', action = wezterm.action.DecreaseFontSize },
@@ -181,6 +177,10 @@ config.keys = {
   { key = 'x', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateCopyMode },
   { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo 'Clipboard' },
   { key = 'v', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
+  
+  -- Tabs
+  { key = 't', mods = tab_mod, action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
+  { key = 'w', mods = tab_mod, action = wezterm.action.CloseCurrentTab { confirm = true } },
 
   { key = '1', mods = tab_mod, action = wezterm.action.ActivateTab(0) },
   { key = '2', mods = tab_mod, action = wezterm.action.ActivateTab(1) },
