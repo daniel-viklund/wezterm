@@ -72,7 +72,7 @@ config.text_background_opacity = 1
 
 -- 'TITLE | RESIZE' is the default. Try 'RESIZE' for a borderless look,
 -- or 'NONE' for no decorations at all.
-config.window_decorations = 'NONE'
+config.window_decorations = "RESIZE"
 
 config.window_padding = {
   left = 0,
