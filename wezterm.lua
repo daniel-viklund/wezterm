@@ -43,8 +43,10 @@ config.warn_about_missing_glyphs = true
 -- COLORS / THEME
 --------------------------------------------------------------------------------
 -- Use a built-in scheme (hundreds available). Browse: https://wezfurlong.org/wezterm/colorschemes/
-config.color_scheme = 'Gruvbox Dark'
+config.color_scheme = 'GruvboxDark'
 config.colors = {
+  -- Match Neovim's Rose Pine background, including leftover space below the grid.
+  background = '#191724',
   cursor_bg = '#e1e1e1'
 }
 
@@ -66,10 +68,6 @@ config.colors = {
 --------------------------------------------------------------------------------
 -- WINDOW
 --------------------------------------------------------------------------------
-config.window_background_opacity = 1.0     -- 0.0 (transparent) .. 1.0 (opaque)
-config.text_background_opacity = 1
--- config.macos_window_background_blur = 20 -- macOS only, pairs nicely with opacity < 1
-
 -- 'TITLE | RESIZE' is the default. Try 'RESIZE' for a borderless look,
 -- or 'NONE' for no decorations at all.
 config.window_decorations = "RESIZE"
@@ -84,6 +82,8 @@ config.window_padding = {
 config.initial_cols = 80           -- starting window size in cells
 config.initial_rows = 24
 config.adjust_window_size_when_changing_font_size = true
+-- Prefer whole terminal cells when resizing to avoid a partial-row gap.
+config.use_resize_increments = true
 
 -- Confirm before closing a window that still has running processes.
 config.window_close_confirmation = 'AlwaysPrompt'   -- 'AlwaysPrompt' | 'NeverPrompt'
@@ -91,7 +91,7 @@ config.window_close_confirmation = 'AlwaysPrompt'   -- 'AlwaysPrompt' | 'NeverPr
 --------------------------------------------------------------------------------
 -- TAB BAR
 --------------------------------------------------------------------------------
-config.enable_tab_bar = true
+config.enable_tab_bar = false
 config.use_fancy_tab_bar = false            -- false = retro/terminal-style tab bar
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = false
