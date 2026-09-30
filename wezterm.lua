@@ -10,6 +10,8 @@
 
 local wezterm = require 'wezterm'
 
+wezterm.add_to_config_reload_watch_list(wezterm.config_dir)
+
 local tab_mod = wezterm.target_triple:find('windows') and 'ALT' or 'SUPER'
 
 -- The config_builder gives you clearer error messages if you mistype a key.
@@ -43,9 +45,9 @@ config.warn_about_missing_glyphs = true
 -- COLORS / THEME
 --------------------------------------------------------------------------------
 -- Use a built-in scheme (hundreds available). Browse: https://wezfurlong.org/wezterm/colorschemes/
-config.color_scheme = 'GruvboxDark'
 config.colors = {
-  -- Match Neovim's Rose Pine background, including leftover space below the grid.
+  foreground = '#e0def4', -- Rose Pine text
+--   -- Match Neovim's Rose Pine background, including leftover space below the grid.
   background = '#191724',
   cursor_bg = '#e1e1e1'
 }
