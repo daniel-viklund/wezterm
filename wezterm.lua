@@ -85,7 +85,7 @@ config.initial_cols = 80           -- starting window size in cells
 config.initial_rows = 24
 config.adjust_window_size_when_changing_font_size = true
 -- Prefer whole terminal cells when resizing to avoid a partial-row gap.
-config.use_resize_increments = true
+config.use_resize_increments = false
 
 -- Confirm before closing a window that still has running processes.
 config.window_close_confirmation = 'AlwaysPrompt'   -- 'AlwaysPrompt' | 'NeverPrompt'
