@@ -184,15 +184,20 @@ config.keys = {
   { key = 't', mods = tab_mod, action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
   { key = 'w', mods = tab_mod, action = wezterm.action.CloseCurrentTab { confirm = true } },
 
-  { key = '1', mods = tab_mod, action = wezterm.action.ActivateTab(0) },
-  { key = '2', mods = tab_mod, action = wezterm.action.ActivateTab(1) },
-  { key = '3', mods = tab_mod, action = wezterm.action.ActivateTab(2) },
-  { key = '4', mods = tab_mod, action = wezterm.action.ActivateTab(3) },
-  { key = '5', mods = tab_mod, action = wezterm.action.ActivateTab(4) },
-  { key = '6', mods = tab_mod, action = wezterm.action.ActivateTab(5) },
-  { key = '7', mods = tab_mod, action = wezterm.action.ActivateTab(6) },
-  { key = '8', mods = tab_mod, action = wezterm.action.ActivateTab(7) },
-  { key = '9', mods = tab_mod, action = wezterm.action.ActivateTab(-1) }, -- last tab
+  -- Send tmux's Ctrl+a prefix followed by a command.
+  { key = 'x', mods = 'SUPER', action = wezterm.action.SendString '\x01x' },
+  { key = 'c', mods = 'SUPER', action = wezterm.action.SendString '\x01c' },
+
+  -- Select tmux windows by sending Ctrl+a followed by the window number.
+  { key = '1', mods = tab_mod, action = wezterm.action.SendString '\x011' },
+  { key = '2', mods = tab_mod, action = wezterm.action.SendString '\x012' },
+  { key = '3', mods = tab_mod, action = wezterm.action.SendString '\x013' },
+  { key = '4', mods = tab_mod, action = wezterm.action.SendString '\x014' },
+  { key = '5', mods = tab_mod, action = wezterm.action.SendString '\x015' },
+  { key = '6', mods = tab_mod, action = wezterm.action.SendString '\x016' },
+  { key = '7', mods = tab_mod, action = wezterm.action.SendString '\x017' },
+  { key = '8', mods = tab_mod, action = wezterm.action.SendString '\x018' },
+  { key = '9', mods = tab_mod, action = wezterm.action.SendString '\x019' },
 }
 
 -- To wipe ALL default keybindings and start clean, uncomment:
