@@ -21,7 +21,7 @@ local config = wezterm.config_builder()
 -- FONT
 --------------------------------------------------------------------------------
 -- Default is a bundled build of JetBrains Mono. You can name any installed font.
-config.font = wezterm.font 'GoMono Nerd Font Mono'
+config.font = wezterm.font 'MesloLGS NF'
 -- Fallback chain: if a glyph is missing in the first font, the next is tried.
 -- config.font = wezterm.font_with_fallback {
 --   'JetBrains Mono',
@@ -33,7 +33,7 @@ config.font = wezterm.font 'GoMono Nerd Font Mono'
 -- config.font = wezterm.font('JetBrains Mono', { weight = 'Bold', italic = false })
 
 config.font_size = 16.0            -- default 12.0 (macOS default is often perceived larger due to DPI)
-config.line_height = 1.3           -- multiplier; 1.1–1.2 gives more breathing room
+config.line_height = 1          -- multiplier; 1.1–1.2 gives more breathing room
 config.cell_width = 1           -- horizontal cell scaling
 -- config.freetype_load_target = 'Normal'   -- 'Normal' | 'Light' | 'Mono' | 'HorizontalLcd'
 -- config.freetype_render_target = 'Normal'
